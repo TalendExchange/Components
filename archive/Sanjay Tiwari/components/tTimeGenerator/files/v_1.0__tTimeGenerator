@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COMPONENT> 
+  <HEADER AUTHOR="PowerUp BI Consulting" COMPATIBILITY="ALL" 
+          DATA_AUTO_PROPAGATE="false"
+          SCHEMA_AUTO_PROPAGATE="true"  
+          PLATEFORM="ALL" 
+          RELEASE_DATE="20110331A" 
+          SERIAL="" STARTABLE="true" 
+          HAS_CONDITIONAL_OUTPUTS="true"
+          STATUS="BETA" VERSION="0.4"> 
+    <SIGNATURE/> 
+  </HEADER>  
+  <FAMILIES> 
+    <FAMILY>PowerUp</FAMILY> 
+    <FAMILY>Business Intelligence</FAMILY> 
+  </FAMILIES>  
+  <DOCUMENTATION> 
+    <URL>http://www.powerupbi.com/talend/tTimeGenerator.html</URL> 
+  </DOCUMENTATION>  
+  <CONNECTORS> 
+    <CONNECTOR CTYPE="FLOW" MAX_OUTPUT="0" /> 
+    <CONNECTOR
+      NAME="YEAR"
+      CTYPE="FLOW"
+      MAX_INPUT="0" LINE_STYLE="1"
+      BASE_SCHEMA="FLOW"
+    />
+    <CONNECTOR
+      NAME="QUARTER"
+      CTYPE="FLOW"
+      MAX_INPUT="0"  LINE_STYLE="1"
+      BASE_SCHEMA="FLOW"
+    />
+    <CONNECTOR
+      NAME="MONTH"
+      CTYPE="FLOW"
+      MAX_INPUT="0" LINE_STYLE="1"
+      BASE_SCHEMA="FLOW"
+    />
+  </CONNECTORS>  
+   <PARAMETERS> 
+     <PARAMETER NAME="SCHEMA_YEAR" FIELD="SCHEMA_TYPE" REQUIRED="true" NUM_ROW="1" CONTEXT="YEAR">
+     <TABLE READONLY="true">
+      <COLUMN NAME="YEAR_ID" TYPE="id_Integer" READONLY="true" CUSTOM="true"/>
+      <COLUMN NAME="YEAR_NUMBER" TYPE="id_Integer" READONLY="true" CUSTOM="true"/>
+      <COLUMN NAME="IS_LEAP" TYPE="id_Integer" READONLY="true" CUSTOM="true"/>
+     </TABLE>
+    </PARAMETER>
+    <PARAMETER NAME="SCHEMA_QUARTER" FIELD="SCHEMA_TYPE" REQUIRED="true" NUM_ROW="2" CONTEXT="QUARTER">
+     <TABLE READONLY="true">
+      <COLUMN NAME="QUARTER_ID" TYPE="id_Integer" READONLY="true" CUSTOM="true"/>
+      <COLUMN NAME="YEAR_ID" TYPE="id_Integer" READONLY="true" CUSTOM="true"/>
+      <COLUMN NAME="QUARTER_NUMBER" TYPE="id_Integer" READONLY="true" CUSTOM="true"/>
+      <COLUMN NAME="QUARTER_PROGRESSIVE" TYPE="id_Integer" READONLY="true" CUSTOM="true"/>
+     </TABLE>
+    </PARAMETER>
+    <PARAMETER NAME="SCHEMA_MONTH" FIELD="SCHEMA_TYPE" REQUIRED="true" NUM_ROW="3" CONTEXT="MONTH">
+     <TABLE READONLY="true">
+      <COLUMN NAME="MONTH_ID" TYPE="id_Integer" READONLY="true" CUSTOM="true"/>
+      <COLUMN NAME="QUARTER_ID" TYPE="id_Integer" READONLY="false" CUSTOM="true"/>
+      <COLUMN NAME="YEAR_ID" TYPE="id_Integer" READONLY="false" CUSTOM="true"/>
+      <COLUMN NAME="MONTH_NUMBER" TYPE="id_Integer" READONLY="false" CUSTOM="true"/>
+      <COLUMN NAME="MONTH_PROGRESSIVE" TYPE="id_Integer" READONLY="false" CUSTOM="true"/>
+      <COLUMN NAME="DAYS_IN_MONTH" TYPE="id_Integer" READONLY="false" CUSTOM="true"/>
+     </TABLE>
+    </PARAMETER>
+    <PARAMETER NAME="START_PERIOD" FIELD="TEXT" NUM_ROW="10" />
+    <PARAMETER NAME="END_PERIOD" FIELD="TEXT" NUM_ROW="10" />
+  </PARAMETERS>  
+  <CODEGENERATION></CODEGENERATION>  
+  <RETURNS> 
+    <RETURN AVAILABILITY="AFTER" NAME="NB_LINE" TYPE="id_Integer"/> 
+  </RETURNS> 
+</COMPONENT>

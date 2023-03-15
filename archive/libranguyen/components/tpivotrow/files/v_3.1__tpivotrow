@@ -1,0 +1,80 @@
+<COMPONENT>
+  <HEADER
+    PLATEFORM="ALL"
+    SERIAL=""
+    VERSION="1.1"
+    STATUS="FINAL"
+    COMPATIBILITY="ALL"
+    AUTHOR="Talend"
+    RELEASE_DATE="20090921"
+    STARTABLE="false"
+    DATA_AUTO_PROPAGATE="false"
+    SCHEMA_AUTO_PROPAGATE="false"
+    IS_MULTIPLYING_OUTPUTS="true"
+  >
+    <SIGNATURE></SIGNATURE>
+  </HEADER>
+  <FAMILIES>
+    <FAMILY>Processing</FAMILY>
+  </FAMILIES>
+  <DOCUMENTATION>
+    <URL />
+  </DOCUMENTATION>
+  
+  <CONNECTORS>
+    <CONNECTOR CTYPE="FLOW" MAX_INPUT="1" MAX_OUTPUT="1"/>
+    <CONNECTOR CTYPE="ITERATE" MAX_OUTPUT="0" MAX_INPUT="0" />
+    <CONNECTOR CTYPE="SUBJOB_OK" MAX_INPUT="1" />
+    <CONNECTOR CTYPE="SUBJOB_ERROR" MAX_INPUT="1" />
+    <CONNECTOR CTYPE="COMPONENT_OK" />
+    <CONNECTOR CTYPE="COMPONENT_ERROR" />
+    <CONNECTOR CTYPE="RUN_IF" />
+  </CONNECTORS>
+  
+  <PARAMETERS>
+  
+    <PARAMETER
+      NAME="WARNING"
+      FIELD="LABEL"
+      REQUIRED="true"
+      NUM_ROW="10"
+      CONTEXT="0;255;0"
+    >
+      <DEFAULT>Columns outside the row keys will be unpivoted</DEFAULT>
+    </PARAMETER>
+
+    <PARAMETER
+      NAME="SCHEMA"
+      FIELD="SCHEMA_TYPE"
+      REQUIRED="true"
+      NUM_ROW="20"
+      READONLY="false"
+    >
+      <TABLE READONLY="false">
+        <COLUMN NAME="pivot_key"   TYPE="id_String" READONLY="true"/>
+        <COLUMN NAME="pivot_value" TYPE="id_String" READONLY="true"/>
+      </TABLE>
+    </PARAMETER>
+    
+    <PARAMETER
+      NAME="ROW_KEYS"
+      FIELD="TABLE"
+      NUM_ROW="30"
+      NB_LINES="4"
+    >
+      <ITEMS>
+        <ITEM NAME="COLUMN" FIELD="PREV_COLUMN_LIST" />
+      </ITEMS>
+    </PARAMETER>
+	
+	<PARAMETER NAME="INCLUDE_EMPTY_VALUES" FIELD="CHECK" REQUIRED="true"
+		REPOSITORY_VALUE="INCLUDE_EMPTY_VALUES" NUM_ROW="35">
+		<DEFAULT>true</DEFAULT>
+	</PARAMETER>
+  </PARAMETERS>
+
+  <CODEGENERATION/>
+  
+  <RETURNS>
+  </RETURNS>
+</COMPONENT>
