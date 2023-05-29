@@ -12,11 +12,11 @@ The communication can be encrypted and secured with authentication.
 ### Details
 * Provides all necessary functionality to work with ElasticSearch in Data Integration jobs. 
 ### Images
-<a href='./screenshots/v_3.3__6.jpg'><img src='./screenshots/v_3.3__6.jpg' ></a>
-<a href='./screenshots/v_3.3__5.jpg'><img src='./screenshots/v_3.3__5.jpg' ></a>
-<a href='./screenshots/v_3.3__4.jpg'><img src='./screenshots/v_3.3__4.jpg' ></a>
-<a href='./screenshots/v_3.2__3.jpg'><img src='./screenshots/v_3.2__3.jpg' ></a>
-<a href='./screenshots/v_3.2__2.jpg'><img src='./screenshots/v_3.2__2.jpg' ></a>
+<a href='./screenshots/v_3.3__9.jpg'><img src='./screenshots/v_3.3__9.jpg' ></a>
+<a href='./screenshots/v_3.3__8.jpg'><img src='./screenshots/v_3.3__8.jpg' ></a>
+<a href='./screenshots/v_3.3__7.jpg'><img src='./screenshots/v_3.3__7.jpg' ></a>
+<a href='./screenshots/v_3.2__6.jpg'><img src='./screenshots/v_3.2__6.jpg' ></a>
+<a href='./screenshots/v_3.2__5.jpg'><img src='./screenshots/v_3.2__5.jpg' ></a>
 
 
 ### Resources

@@ -21,11 +21,11 @@ The result can also send as flow into the job.
 * Download result as file or provide it as flow
 * Use AdWord Query Language or define the report per parameters
 ### Images
-<a href='./screenshots/v_8.8__12.jpg'><img src='./screenshots/v_8.8__12.jpg' ></a>
-<a href='./screenshots/v_8.8__11.jpg'><img src='./screenshots/v_8.8__11.jpg' ></a>
-<a href='./screenshots/v_8.7__9.jpg'><img src='./screenshots/v_8.7__9.jpg' ></a>
-<a href='./screenshots/v_8.7__10.jpg'><img src='./screenshots/v_8.7__10.jpg' ></a>
-<a href='./screenshots/v_8.6__8.jpg'><img src='./screenshots/v_8.6__8.jpg' ></a>
+<a href='./screenshots/v_8.8__18.jpg'><img src='./screenshots/v_8.8__18.jpg' ></a>
+<a href='./screenshots/v_8.8__17.jpg'><img src='./screenshots/v_8.8__17.jpg' ></a>
+<a href='./screenshots/v_8.7__16.jpg'><img src='./screenshots/v_8.7__16.jpg' ></a>
+<a href='./screenshots/v_8.7__15.jpg'><img src='./screenshots/v_8.7__15.jpg' ></a>
+<a href='./screenshots/v_8.6__14.jpg'><img src='./screenshots/v_8.6__14.jpg' ></a>
 
 
 ### Resources

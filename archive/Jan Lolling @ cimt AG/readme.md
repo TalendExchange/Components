@@ -248,22 +248,6 @@ Please contact me in case of questions and do not use the rating function to pos
 
 <img src='./components/tJobInstance_component_collection/sample.jpg'>
 
-## <a href='./components/tJSONDoc* components/readme.md'><img src='./components/tJSONDoc* components/logo.jpg' width='40' height='40'> tJSONDoc* components</a>
- :warning: Compatibility not known
-
-This suite constists of 4 components:
-tJSONDocOpen - the basis of all other components. It represents the JSON document it self, all other components are dedicated to work with this document
-tJSONDocInput - read from an object or an array
-tJSONDocInputStream - read very large json files as stream
-tJSONDocOutput - create the sub elements of the JSON document and write the attributes of Objects or values of arrays.
-tJSONDocSave - render and format the final document and provide the content to a flow or a file.
-
-Then idea behind these components is to read or build your json document in multiple steps right where you need or fetch the necessary data.
-The components can refer to eachother and use this way the current json node of the referenced component to dock on and start working here.
-
-Many thanks to my customer GVL in Berlin (Martin, Karim and Ralf) for their great support by ideas and tests.
-<img src='./components/tJSONDoc* components/sample.jpg'>
-
 ## <a href='./components/tMysqlConnectionPool/readme.md'><img src='./components/tMysqlConnectionPool/logo.jpg' width='40' height='40'> tMysqlConnectionPool</a>
  :white_check_mark: Compatible with Talend 7.x / 8.x 
 

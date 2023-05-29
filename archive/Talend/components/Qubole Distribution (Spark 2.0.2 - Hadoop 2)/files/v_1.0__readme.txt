@@ -1,0 +1,108 @@
+# Use a Qubole distribution from Talend Studio
+
+## Prerequisites
+
+- Talend Studio 7.0
+- Talend JobServer 7.0 (same version as the Studio)
+- the Qubole distribution zip file downloaded from Talend Exchange
+
+## QuickStart
+
+### Configure the JobServer
+#### Create a JobServer cluster
+- Create an EC2 instance in the VPC where your Qubole cluster is running.
+- Upload and run the JobServer.
+ In Studio V7.0, the default Java version in a JobServer is 1.8.
+
+### Configure the Studio
+- Configure a remote execution server.
+In the Studio, configure the connection to the JobServer so as to use this JobServer to run a Talend Job.
+	- Open Window -> Preference -> Talend -> Exec/Debug -> Remote -> Add
+
+| Property name        | Value |  Standard port | User | Password | File Transfer port | enable SSL |
+| ------------- |:------------------:| :-----: | :-----: |:-----: |:-----: |:-----: |
+| Hostname| \<PathOfJobServerEC2Instance> | 8000 | User | <default> | 8001 | false |
+| Hostname| ec2-54-161-123-198.compute-1.amazonaws.com | 8000 | User | <default> | 8001 | false |
+
+- Define the connection to your Qubole cluster
+	* In the **Repository** tree view, right click **Hadoop cluster** under the **Metadata** node to open the contextual menu.
+	* Select **Create Hadoop cluster**.
+	* In the first step of the wizard, enter the discriptive information about the connection to be created, such as the name of this connection and its purpose.
+	* Click **Next** to open **\[Hadoop Configuration Import Wizard\]**.
+	* Select **Enter manually Hadoop services** and click **Finish**.
+	* From the **Distribution** drop-down list, select **Custom**.
+	* Click the "..." button to import the Qubole zip file (Qubole_exchange.zip).
+    * Enter the connection information in the corresponding fields.	 
+
+    | Property name        | Value | 
+    | ------------- |:------------------:| 
+    | Namenode URI | "hdfs\://\<QuboleClusterEC2>:9000" |
+    | Resource Manager | "\<QuboleClusterEC2>:8032" |
+    | Resource Manager Scheduler |"\<QuboleClusterEC2>:8030"|
+    | Job History | "\<QuboleClusterEC2>:10020" |
+    | Use datanode hostname | selected |
+ 
+- Click **Finish** to validate the creation. This new connection appears under the **Hadoop Cluster** node in **Repository**.
+- Right click this connection and select **Create HDFS**.
+- Follow the wizard to create the connection to the HDFS service of your Qubole cluster.
+- At the last step of the wizard, click **Check** to verify the connection to the HDFS service. A message should appear to say that the connection is successful.
+- Click **Finish** to validate the creation. This HDFS connection is displayed under the Qubole connection you previously defined in **Repository**.
+- Create a Spark Job and keep it open in the workspace of your Studio.
+- Use the Qubole connection metadata in this Spark Job.
+	- Drop the new HDFS connection from the **Repository** to this Spark Job. A component list pops up.
+	- Select **tHDFSConfiguration** component.
+	- If prompted, click **OK** to accept the update of the Hadoop configuration.
+		- This will use your Qubole connection metadata to fill the fields in the **Spark Configuration** tab in the **Run** view of your Job.
+- If you are using a jobServer:
+	- In the **Spark Configuration** tab, select the **Define the driver hostname or IP address** check box.
+	- In the field that is displayed, add the JobServer EC2 DNS address.
+    - In the **Target Exec** tab, select this JobServer.
+ - Run your job
+
+## Known issue / Limitations
+- SPARK_HOME
+	At the runtime of a spark job, you could face this issue
+	- Error log
+	```
+    [ERROR]: org.apache.spark.SparkContext - Error initializing SparkContext.
+    java.util.NoSuchElementException: key not found: SPARK_HOME
+	```
+    In order to fix this issue, you need to install a spark-client on the machine which execute the job (talend studio / jobserver or qubole cluster).
+
+    First, you need to stop the JobServer (or Talend Studio).
+
+    Then you need to download from https://spark.apache.org/downloads.html the right version of spark
+	In our case :
+    - Spark release = 2.0.2 (Nov 14 2016)
+    - package type = Pre-built for Apache Hadoop 2.6
+
+	Then you need to upload the zip file on the JobServer cluster and unzip it where you want <pathOfSparkCLientFolder>
+   Example : /tmp/spark-2.0.2-bin-hadoop2.6
+
+    Then you need to export the environment variable `SPARK_HOME`
+    ```
+    export SPARK_HOME=<pathOfSparkCLientFolder>
+    ```
+    Then you need to start the JobServer (or Talend Studio).
+
+## Supported / unsupported list of modules
+
+### Supported
+- Spark version: 2.0.2
+- Hadoop cluster: 2.6.0
+- Cluster + Studio: Java 8
+- Hive version: 2.1.1
+- Components in a Standard Job:
+	- HDFS
+	- Hive
+- MapReduce
+
+### Unsupported
+- Spark on Hive
+- Pig
+- HCatalog
+- HBase
+- Redshift
+- DynamoDB
+- In a Standard Job:
+	- Hive Parquet file format is not supported

@@ -208,6 +208,22 @@ Already existing accounts can be reused. Take care to add the account emails to 
 Do not be confused with the new Talend build-in tGoogleAnalyticsReport component. Talends component works only for the now out-dated Google Analytics 3 (Universal Analytics) and will stop working on 1. June 2023.
 <img src='./components/tGoogleAnalytics4Input/sample.jpg'>
 
+## <a href='./components/tGoogleAnalytics4Management/readme.md'><img src='./components/tGoogleAnalytics4Management/logo.jpg' width='40' height='40'> tGoogleAnalytics4Management</a>
+ :white_check_mark: Compatible with Talend 7.x / 8.x 
+
+This component helps to get the metadata of your GA4 properties into your own database.
+The configuration is fairly simple, just reference a credential key json file and thats it. 
+Take care the account email is added to your GA4 account.
+
+The component collects:
+* GA4 accounts
+* GA4 properties
+* GA4 dimension (including property specific dimensions)
+* GA4 metrics (including property specific metrics)
+
+Because the Google API ist a beta version yet, it will be changed in the future and most likely enhanced.
+<img src='./components/tGoogleAnalytics4Management/sample.jpg'>
+
 ## <a href='./components/tGoogleAnalyticsInput/readme.md'><img src='./components/tGoogleAnalyticsInput/logo.jpg' width='40' height='40'> tGoogleAnalyticsInput</a>
  :white_check_mark: Compatible with Talend 7.x / 8.x 
 

@@ -28,11 +28,11 @@ Please refer to the linked documentation how to do that.
 * Can handle reports created as books
 * Can use JDBC database connections, XML files or CSV files as data source.
 ### Images
-<a href='./screenshots/v_7.2__6.jpg'><img src='./screenshots/v_7.2__6.jpg' ></a>
-<a href='./screenshots/v_7.2__5.jpg'><img src='./screenshots/v_7.2__5.jpg' ></a>
-<a href='./screenshots/v_7.2__4.jpg'><img src='./screenshots/v_7.2__4.jpg' ></a>
-<a href='./screenshots/v_7.0__3.jpg'><img src='./screenshots/v_7.0__3.jpg' ></a>
-<a href='./screenshots/v_7.0__2.jpg'><img src='./screenshots/v_7.0__2.jpg' ></a>
+<a href='./screenshots/v_7.2__34.jpg'><img src='./screenshots/v_7.2__34.jpg' ></a>
+<a href='./screenshots/v_7.2__33.jpg'><img src='./screenshots/v_7.2__33.jpg' ></a>
+<a href='./screenshots/v_7.2__32.jpg'><img src='./screenshots/v_7.2__32.jpg' ></a>
+<a href='./screenshots/v_7.0__31.jpg'><img src='./screenshots/v_7.0__31.jpg' ></a>
+<a href='./screenshots/v_7.0__30.jpg'><img src='./screenshots/v_7.0__30.jpg' ></a>
 
 
 ### Resources
