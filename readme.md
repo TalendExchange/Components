@@ -1,3 +1,11 @@
+This repository hold the content of exchange.talend.com as a public archive.
+
+The export was taken on May 20th.
+
+If you have any inquiries you can reach out on: exchange-migration (at) talend.com 
+
+New components / content will be handled via community.talend.com
+
 # Data Integration Component
  * <a href='./archive/The_Loeki/components/abvConcat/readme.md'><img src='./archive/The_Loeki/components/abvConcat/logo.jpg' width='20' height='20'> abvConcat</a> by <sup><sub><a href='./archive/The_Loeki/readme.md'>The_Loeki</a></sub></sup> :warning: Compatibility not known - 2013-03-27 :arrow_heading_down: 29
  * <a href='./archive/The_Loeki/components/abvDependencySortRow/readme.md'><img src='./archive/The_Loeki/components/abvDependencySortRow/logo.jpg' width='20' height='20'> abvDependencySortRow</a> by <sup><sub><a href='./archive/The_Loeki/readme.md'>The_Loeki</a></sub></sup> :warning: Compatibility not known - 2013-03-27 :arrow_heading_down: 59
